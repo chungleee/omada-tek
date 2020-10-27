@@ -1,6 +1,32 @@
+import React from 'react'
+import {Link} from 'react-router-dom'
+import {useForm} from 'react-hook-form'
 const Register = () => {
+  const {register, handleSubmit, errors} = useForm()
+
+  const onSubmit = (data) => {
+    console.log(data)
+  }
+  
   return (
-    <h1>this is where the user creates his account</h1>
+    <div>
+      <h1>Register</h1>
+
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input ref={register({ required: true })} name='email' type="email" placeholder='Email'/>
+        {errors.email && <span>Password field is required</span>}
+
+        <input ref={register({ required: true })} name='password' type="password" placeholder='Password'/>
+        {errors.password && <span>Password field is required</span>}
+
+        <input ref={register({ required: true })} name='confirm_password' type="password" placeholder='Confirm password'/>
+        {errors.confirm_password && <span>Password field is required</span>}
+
+        <input type="submit"/>
+      </form>
+
+      <Link to='/'>Login</Link>
+    </div>
   )
 }
 
