@@ -6,13 +6,17 @@ import Register from './pages/Register'
 const App = () => {
 	return (
 		<Router>
-			<Route exact path='/'>
-				<Login />
-			</Route>
+			<div className='flex flex-column justify-center w-90 w-50-l vh-100' 
+			style={{marginLeft:'auto', marginRight:'auto'}}
+			>
+				<Route exact path='/'>
+					<Login />
+				</Route>
 
-			<Route path='/register'>
-				<Register/>
-			</Route>
+				<Route path='/register'>
+					<Register/>
+				</Route>
+			</div>
 		</Router>
 	)
 }

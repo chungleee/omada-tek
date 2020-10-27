@@ -11,17 +11,22 @@ const Login = () => {
   return (
     <div>
       <h1>Login</h1>
-      
+
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input ref={register({required:true})} name='email' type="text" placeholder='Email'/>
-        {errors.email && <span>Email field is required</span>}
 
-        <input ref={register({required:true})} name='password' type="password" placeholder='Password'/>
-        {errors.password && <span>Password field is required</span>}
+      <div className='flex flex-column mb4'>
+        <input className='ba input-reset mb1' ref={register({required:true})} name='email' type="text" placeholder='Email'/>
+        {errors.email && <span className='red'>Email field is required</span>}
+      </div>
 
-        <input type="submit"/>
+      <div className='flex flex-column mb4'>
+        <input className='ba input-reset mb1' ref={register({required:true})} name='password' type="password" placeholder='Password'/>
+        {errors.password && <span className='red'>Password field is required</span>}
+      </div>
+
+        <input className='ba input-reset grow' type="submit"/>
       </form>
-      
+
       <Link to='/register'>Register</Link>
     </div>
   )
