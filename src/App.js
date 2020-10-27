@@ -1,8 +1,19 @@
+import React from 'react'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+import Login from './pages/Login'
+import Register from './pages/Register'
+
 const App = () => {
 	return (
-		<div>
-			<h1>hello world</h1>
-		</div>
+		<Router>
+			<Route exact path='/'>
+				<Login />
+			</Route>
+
+			<Route path='/register'>
+				<Register/>
+			</Route>
+		</Router>
 	)
 }
 
