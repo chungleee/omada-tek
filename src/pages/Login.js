@@ -12,7 +12,7 @@ const Login = () => {
 		<div>
 			<h1>Login</h1>
 
-			<form onSubmit={handleSubmit(onSubmit)}>
+			<form className='mb3' onSubmit={handleSubmit(onSubmit)}>
 				<div className='flex flex-column mb4'>
 					<input
 						className='ba input-reset mb1'
